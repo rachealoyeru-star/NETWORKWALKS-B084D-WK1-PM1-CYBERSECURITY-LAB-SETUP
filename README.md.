@@ -19,8 +19,8 @@ The lab runs on a private virtual **NAT Network**, so attacker, target and monit
 - Install and configure VirtualBox.
 - Import Kali Linux as the attacker machine.
 - Create a private **NAT Network** for the lab.
+- Configure network connectivity for kali VM.
 - Give the Kali VM a consistent IP address.
-- Add target VMs (Metasploitable 2, Kioptrix 1, devguru, Windows 10) and a monitoring VM (Wazuh).
 - Verify connectivity and DNS resolution.
 - Take a clean VM snapshot for recovery.
 - Document the whole process for future projects.
@@ -45,19 +45,10 @@ The lab can be used for:
 
 ## 🏗️ Lab Architecture
 
-![VirtualBox Manager showing the lab virtual machines](1-screenshot-title-image.png)
+The laboratory consists of a Windows host computer running Oracle VirtualBox, with Kali Linux operating as a virtual machine.
 
-| 🖥️ Virtual Machine | 🎭 Role | 📍 Status when documented |
-| --- | --- | --- |
-| kali-linux-2025.4-virtualbox-amd64 | Attacker machine | Powered Off (snapshot taken) |
-| csec 1 | Practice VM | Powered Off |
-| Wazuh v4.14.4 OVA | Security monitoring (SIEM/XDR) | Powered Off |
-| devguru | Vulnerable target | Powered Off |
-| Metasploitable 2 | Vulnerable target | Powered Off |
-| Kioptrix 1 | Vulnerable target | Powered Off |
-| windows (Windows 10) | Windows target / test machine | Saved |
+The Kali Linux virtual machine connects to a configured NAT Network to obtain network connectivity.
 
-All machines are intended to attach to the same NAT Network so they can reach each other.
 
 ---
 
@@ -66,8 +57,8 @@ All machines are intended to attach to the same NAT Network so they can reach ea
 | 🧩 Component | ⚙️ Configuration |
 | --- | --- |
 | 🖥️ Host OS | Windows 10 _(update if different)_ |
-| 🧠 Host RAM | _(fill in)_ |
-| ⚡ Processor | _(fill in)_ |
+| 🧠 Host RAM | _(8GB)_ |
+| ⚡ Processor | _(intel i7)_ |
 | 🧰 Hypervisor | Oracle VirtualBox _(add version)_ |
 | 🐉 Security OS | Kali Linux 2025.4 (VirtualBox amd64 image) |
 | 🌐 Virtual Network | NAT Network (`NatNetwork`) |
@@ -198,18 +189,15 @@ This laboratory is intended strictly for education and authorized testing. Vulne
 
 - **VirtualBox:** <https://www.virtualbox.org/wiki/Downloads>
 - **Kali Linux:** <https://www.kali.org/get-kali/>
-- **Wazuh:** <https://wazuh.com/>
-- **Metasploitable 2:** <https://docs.rapid7.com/metasploit/metasploitable-2/>
-- **VulnHub (Kioptrix, devguru):** <https://www.vulnhub.com/>
 
 ---
 
 # 👤 Author
 
-**Rachael Chukwueke**
+**Oyeru Rachael Emalohi**
 Cybersecurity learner, Lagos, Nigeria
 
-LinkedIn: _(add your link)_
+LinkedIn: _(www.linkedin.com/in/oyeru-rachael-067a39253)_
 
 ---
 
